@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قراءة سورة الناس</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Amiri', serif; /* خط شبيه بخط القرآن الكريم */
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    /* ناف بار شبه شفاف */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      text-align: right;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    nav input {
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #FFD700;
+      padding: 5px;
+      font-size: 18px;
+      border-radius: 5px;
+      text-align: right;
+      width: 150px;
+      margin-left: 10px;
+    }
+
+    /* شريط القوائم الجانبي */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 350px;
+      height: 100%;
+      background: #333;
+      transition: all 0.3s ease;
+      z-index: 100;
+      padding-top: 60px;
+    }
+
+    #sidebar a {
+      display: block;
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      transition: background 0.3s ease;
+    }
+
+    #sidebar a:hover {
+      background-color: #555;
+    }
+
+    /* زر الشروط */
+    #menuButton {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #40a4c8;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 200;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #menuButton:hover {
+      background-color: #2d4059;
+    }
+
+    /* محتوى السورة */
+    #sura {
+      padding: 50px;
+      margin-top: 80px;
+      text-align: right;
+      font-size: 28px;
+      line-height: 2;
+      direction: rtl;
+      max-width: 650px;
+      margin: 120px auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    #sura h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #FFD700;
+    }
+
+    #sura p {
+      margin: 15px 0;
+    }
+
+    /* أزرار التفسير والأحكام */
+    #tfsrButton, #ahkamButton, #storiesButton {
+      background-color: #FFD700;
+      color: black;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 15px;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    #tfsrButton:hover, #ahkamButton:hover, #storiesButton:hover {
+      background-color: #ff8c00;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ناف بار مع حقل تحديد رقم الآية -->
+
+    <!-- حقل Input لتحديد رقم الآية -->
+   
+
+
+  <!-- زر الثلاث شُرُوط -->
+  <button id="menuButton" onclick="toggleSidebar()">☰</button>
+
+  <!-- الشريط الجانبي -->
+  <div id="sidebar">
+    <a href="#">بداية القراءة</a>
+    <a href="#">تحديد الآية من</a>
+    <a href="#">تحديد الآية إلى</a>
+    <a href="#">أسماء القراء</a>
+    <a href="#">التفسير</a>
+    <a href="#">الأحكام</a>
+    <a href="#">القصص الواردة</a>
+    <input type="number" id="ayahNumberInput" placeholder="أدخل رقم الآية" oninput="showVerseDetails()">
+  </div>
+
+  <!-- محتوى السورة -->
+  <div id="sura">
+    <h2>سورة الناس</h2>
+    <p>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+    <p>قُلْ أَعُوذُ بِرَبِّ النَّاسِ</p>
+    <p>مَلِكِ النَّاسِ</p>
+    <p>إِلَٰهِ النَّاسِ</p>
+    <p>مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ</p>
+    <p>الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ</p>
+    <p>مِنَ الْجِنَّةِ وَالنَّاسِ</p>
+  <script>
+    // التبديل بين إظهار الشريط الجانبي واخفائه
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar');
+      if (sidebar.style.right === "0px") {
+        sidebar.style.right = "-350px";
+      } else {
+        sidebar.style.right = "0";
+      }
+    }
+
+    // دالة لعرض تفاصيل الآية حسب رقم الآية المُدخل
+    function showVerseDetails() {
+      var ayahNumber = document.getElementById('ayahNumberInput').value;
+
+      // تعريف التفسير الافتراضي بناءً على رقم الآية
+      var verseText = "";
+      var verseExplanation = "";
+
+      switch(ayahNumber) {
+        case "1":
+          verseText = "قُلْ أَعُوذُ بِرَبِّ النَّاسِ";
+          verseExplanation = "التفسير: هذه الآية تدعو الإنسان إلى الاستعاذة بالله من شر الشيطان ووساوسه.";
+          break;
+        case "2":
+          verseText = "مَلِكِ النَّاسِ";
+          verseExplanation = "التفسير: الآية تشير إلى ملكية الله تعالى على جميع الخلق.";
+          break;
+        case "3":
+          verseText = "إِلَٰهِ النَّاسِ";
+          verseExplanation = "التفسير: الله سبحانه وتعالى هو الإله الذي يستحق العبادة.";
+          break;
+        case "4":
+          verseText = "مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ";
+          verseExplanation = "التفسير: تشير الآية إلى الشيطان الذي يوسوس في صدور الناس.";
+          break;
+        default:
+          verseText = "آية غير معروفة";
+          verseExplanation = "لا يوجد تفسير لهذا الرقم.";
+          break;
+      }
+
+      // عرض التفسير في الشريط الجانبي (يمكنك تعديل هذا بحسب الحاجة)
+      alert("الآية: " + verseText + "\nالتفسير: " + verseExplanation);
+    }
+  </script>
+
+</body>
+</html>

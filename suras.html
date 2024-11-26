@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة سور القرآن الكريم</title>
+    <style>
+        /* تصميم الصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('.//back\ ground.jpg'); /* هنا يتم وضع الصورة الخلفية */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding-bottom: 50px;
+            margin: 0;
+            
+            overflow-y: scroll; /* إظهار شريط التمرير */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .surah-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .surah-item {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .surah-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .surah-item h3 {
+            color: #3498db;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .surah-item a {
+            color: #2ecc71;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* زر التمرير إلى أعلى */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #0056b3;
+        }
+
+        /* تصميم شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #007BFF;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>سور القرآن الكريم</h1>
+
+    <div class="surah-container">
+        <!-- جميع سور القرآن الكريم -->
+        <div class="surah-item"><h3>سورة الفاتحة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة البقرة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة آل عمران</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة النساء</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المائدة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأنعام</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأعراف</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأنفال</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة التوبة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة يونس</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة هود</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة يوسف</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة إبراهيم</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الحجر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة النحل</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الإسراء</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الكهف</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة مريم</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة طه</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأنبياء</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الحج</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المؤمنون</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الفرقان</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الشعراء</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة النمل</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة القصص</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة العنكبوت</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الروم</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة لقمان</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة السجدة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأحزاب</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة يس</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الصافات</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الزمر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة فصلت</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الشورى</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الزخرف</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الدخان</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الجاثية</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأحقاف</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة محمد</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الفتح</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الحجرات</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة ق</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الذاريات</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الحديد</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المجادلة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الحشر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الممتحنة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الصف</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الجمعة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المنافقون</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة التغابن</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الطلاق</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة التحريم</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الملك</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة القلم</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الحاقة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المعارج</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة نوح</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الجن</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المزمل</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المدثر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة القيامة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الإنسان</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المرسلات</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة النبأ</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة النازعات</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة عبس</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة التكوير</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الإنفطار</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المطففين</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الإنشقاق</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة البروج</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الطارق</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الأعلى</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الغاشية</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الفجر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة البلد</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الشمس</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الليل</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الضحى</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الشرح</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة التين</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة العلق</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة القدر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة البينة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الزلزلة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة العاديات</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة القارعة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة التكاثر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة العصر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الهمزة</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الفيل</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة قريش</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الماعون</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الكوثر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الكافرون</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة النصر</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة المسد</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الإخلاص</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الفلق</h3><a href="#">تصفح السورة</a></div>
+        <div class="surah-item"><h3>سورة الناس</h3><a href="سوره الناس.html">تصفح السورة</a></div>
+    </div>
+
+    <!-- زر التمرير إلى أعلى -->
+    <button id="scrollToTopBtn">&#8593;</button>
+
+    <script>
+        // إظهار زر التمرير عند التمرير
+        window.onscroll = function() {
+            var button = document.getElementById('scrollToTopBtn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        // عند النقر على الزر التمرير إلى أعلى الصفحة
+        document.getElementById('scrollToTopBtn').onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
+</body>
+</html>
